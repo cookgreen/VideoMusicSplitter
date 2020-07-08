@@ -14,10 +14,14 @@ namespace VideoMusicSplitter
 {
     public partial class frmMain : Form
     {
+        private VMSConfigReader configReader;
+
         public frmMain()
         {
             InitializeComponent();
             LoadFFMPEGFromSystemEnvironment();
+            configReader = new VMSConfigReader();
+            configReader.Read(Environment.CurrentDirectory + "\\vms_config.ini");
         }
 
         private void LoadFFMPEGFromSystemEnvironment()
@@ -111,13 +115,24 @@ namespace VideoMusicSplitter
                 Process ffmpegProcess = new Process();
                 ffmpegProcess.StartInfo.FileName = txtFFMPEG.Text;
                 ffmpegProcess.StartInfo.Arguments = argumLine;
+                ffmpegProcess.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                ffmpegProcess.StartInfo.RedirectStandardError = true;
+                ffmpegProcess.StartInfo.RedirectStandardOutput = true;
+                ffmpegProcess.StartInfo.RedirectStandardInput = true;
+				ffmpegProcess.OutputDataReceived += ffmpegProcess_OutputDataReceived;
                 ffmpegProcess.Start();
 
                 index++;
             }
         }
 
-        private List<VideoSplitterInfo> parseVideoSplitterInfos()
+		private void ffmpegProcess_OutputDataReceived(object sender, DataReceivedEventArgs e)
+		{
+            txtOutput.AppendText(e.Data);
+            txtOutput.AppendText(Environment.NewLine);
+		}
+
+		private List<VideoSplitterInfo> parseVideoSplitterInfos()
         {
             List<VideoSplitterInfo> videoSplitterInfos = new List<VideoSplitterInfo>();
             using (StreamReader reader = new StreamReader(txtInputFile.Text))
@@ -140,7 +155,7 @@ namespace VideoMusicSplitter
         private void BtnChooseVideo_Click(object sender, EventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filter = "Video/Music File|*.mp4;*mp3;*mkv";
+            dialog.Filter = "Video/Music File|" + configReader.Extension;
             if (dialog.ShowDialog() == DialogResult.OK)
             {
                 txtVideoMusicFile.Text = dialog.FileName;
