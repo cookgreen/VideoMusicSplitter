@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29230.47
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoMusicSplitter", "VideoMusicSplitter.csproj", "{35AA1CE4-F721-412B-A3D0-261BBEF34513}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoMusicSplitter", "VideoMusicSplitter\VideoMusicSplitter.csproj", "{35AA1CE4-F721-412B-A3D0-261BBEF34513}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIFEditor", "SIFEditor\SIFEditor.csproj", "{90BA894A-2D18-4116-92D6-7ECC9554922D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoMusicSplitter.Common", "VideoMusicSplitter.Common\VideoMusicSplitter.Common.csproj", "{7444A923-C58F-46F2-B9DB-5D244EE4B2C5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{35AA1CE4-F721-412B-A3D0-261BBEF34513}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{35AA1CE4-F721-412B-A3D0-261BBEF34513}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{35AA1CE4-F721-412B-A3D0-261BBEF34513}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90BA894A-2D18-4116-92D6-7ECC9554922D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90BA894A-2D18-4116-92D6-7ECC9554922D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90BA894A-2D18-4116-92D6-7ECC9554922D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90BA894A-2D18-4116-92D6-7ECC9554922D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7444A923-C58F-46F2-B9DB-5D244EE4B2C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7444A923-C58F-46F2-B9DB-5D244EE4B2C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7444A923-C58F-46F2-B9DB-5D244EE4B2C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7444A923-C58F-46F2-B9DB-5D244EE4B2C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

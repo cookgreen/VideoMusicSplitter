@@ -6,5 +6,5 @@
 *.xml
 *.cache
 *.user
-bin/*
-obj/*
+*/bin/*
+*/obj/*
