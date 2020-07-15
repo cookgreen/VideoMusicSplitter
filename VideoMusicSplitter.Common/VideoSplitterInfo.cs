@@ -9,7 +9,7 @@
         {
 			get
 			{
-                return string.Format("{0}-{1}|{2}", StartTime, EndTime, Name);
+                return string.Format("{0}-{1} {2}", StartTime, EndTime, Name);
 			}
         }
 	}
